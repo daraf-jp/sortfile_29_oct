@@ -1,8 +1,10 @@
 #! /bin/sh
 # @(#) このプログラムは議事録を整理するためのプログラムです。
 
-if [ -d sorted_gijiroku ]; then
-  echo 'sorted_gijirokuフォルダはすでに存在します。'
+SORTEDDIR=sorted_gijiroku
+
+if [ -d $SORTEDDIR ]; then
+  echo "$SORTEDDIR フォルダはすでに存在します。"
 else
-  mkdir sorted_gijiroku
+  mkdir $SORTEDDIR
 fi
