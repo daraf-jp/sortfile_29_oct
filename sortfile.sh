@@ -30,7 +30,9 @@ files=(`find $ALLDIR -name "*.log"`)
 for file in ${files[@]}
 do
   new_file=`expr $file : ".*\([0-9][0-9][0-9][0-9]_[0-9][0-9]_[0-9][0-9]\).*"`.log
-  echo $new_file
   user=`expr \`basename $file\` : "^\(.*\)_[0-9][0-9][0-9][0-9].*"`
-  echo $user
+  echo "作成者：$user" >> $file
+  cat $file >> $ALLDIR/$new_file
 done
+
+rm `find $ALLDIR -name "*_all.log"`
