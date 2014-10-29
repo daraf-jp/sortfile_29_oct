@@ -18,7 +18,7 @@ files=(`find $LOGDIR -name "*.log"`)
 
 for file in ${files[@]}
 do
-  if [ `basename $file` = "*_all.log" ]; then
+  if echo `basename $file` | grep -q _all.log; then
     echo `basename $file`
   fi
 done
