@@ -31,4 +31,6 @@ for file in ${files[@]}
 do
   new_file=`expr $file : ".*\([0-9][0-9][0-9][0-9]_[0-9][0-9]_[0-9][0-9]\).*"`.log
   echo $new_file
+  user=`expr \`basename $file\` : "^\(.*\)_[0-9][0-9][0-9][0-9].*"`
+  echo $user
 done
