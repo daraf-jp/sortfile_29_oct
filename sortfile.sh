@@ -19,6 +19,8 @@ files=(`find $LOGDIR -name "*.log"`)
 for file in ${files[@]}
 do
   if echo `basename $file` | grep -q _all.log; then
-    echo `basename $file`
+    cp $file $ALLDIR
+  else
+    cp $file $NOTALLDIR
   fi
 done
