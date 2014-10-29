@@ -24,3 +24,11 @@ do
     cp $file $NOTALLDIR
   fi
 done
+
+files=(`find $ALLDIR -name "*.log"`)
+
+for file in ${files[@]}
+do
+  new_file=`expr $file : ".*\([0-9][0-9][0-9][0-9]_[0-9][0-9]_[0-9][0-9]\).*"`.log
+  echo $new_file
+done
