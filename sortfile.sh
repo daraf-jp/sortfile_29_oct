@@ -23,7 +23,12 @@ do
   if echo `basename $file` | grep -q _all.log; then
     cp $file $ALLDIR
   else
-    cp $file $NOTALLDIR
+    user=`expr \`basename $file\` : "^\(.*\)_[0-9][0-9][0-9][0-9].*"`
+    case $user in
+      taro) cp $file $KAIHATSUDIR ;;
+      jiro) cp $file $EIGYODIR ;;
+      saburo) cp $file $KAIHATSUDIR ;;
+    esac
   fi
 done
 
