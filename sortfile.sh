@@ -10,4 +10,6 @@ else
   mkdir $SORTEDDIR
 fi
 
-find $LOGDIR -name "*.log" -print
+files=(`find $LOGDIR -name "*.log"`)
+
+echo ${files[@]}
