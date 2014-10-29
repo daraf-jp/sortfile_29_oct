@@ -10,4 +10,4 @@ else
   mkdir $SORTEDDIR
 fi
 
-find $LOGDIR -print
+find $LOGDIR -name "*.log" -print
