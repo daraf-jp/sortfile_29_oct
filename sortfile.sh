@@ -12,4 +12,7 @@ fi
 
 files=(`find $LOGDIR -name "*.log"`)
 
-echo ${files[@]}
+for file in ${files[@]}
+do
+  echo `basename $file`
+done
