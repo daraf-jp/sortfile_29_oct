@@ -4,14 +4,16 @@
 SORTEDDIR=sorted_gijiroku
 LOGDIR=gijiroku
 ALLDIR="$SORTEDDIR/all"
-NOTALLDIR="$SORTEDDIR/notall"
+KAIHATSUDIR="$SORTEDDIR/kaihatsu"
+EIGYODIR="$SORTEDDIR/eigyo"
 
 if [ -d $SORTEDDIR ]; then
   echo "$SORTEDDIR フォルダはすでに存在します。"
 else
   mkdir $SORTEDDIR
   mkdir $ALLDIR
-  mkdir $NOTALLDIR
+  mkdir $KAIHATSUDIR
+  mkdir $EIGYODIR
 fi
 
 files=(`find $LOGDIR -name "*.log"`)
