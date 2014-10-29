@@ -18,5 +18,7 @@ files=(`find $LOGDIR -name "*.log"`)
 
 for file in ${files[@]}
 do
-  echo `basename $file`
+  if [ `basename $file` = "*_all.log" ]; then
+    echo `basename $file`
+  fi
 done
